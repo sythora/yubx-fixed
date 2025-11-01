@@ -27,7 +27,7 @@
 
 #define LSTATE_STACKSIZE_ENC VMValue1
 
-#define CLOSURE_CONT_ENC VMValue1
+#define CLOSURE_CONT_ENC VMValue2
 #define CLOSURE_DEBUGNAME_ENC VMValue1
 
 #define UDATA_META_ENC VMValue1
