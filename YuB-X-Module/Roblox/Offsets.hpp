@@ -31,12 +31,10 @@ namespace Offsets
     const uintptr_t OpcodeLookupTable = REBASE(0x5BF49C0);
     const uintptr_t ScriptContextResume = REBASE(0x101C4C0);
 
-    namespace LuaU
+    namespace Luau
     {
-        const uintptr_t ScriptContextResume = 0x850;
-
         const uintptr_t LuaD_Throw = REBASE(0x37D29A0);
-        const uintptr_t LuaU_Execute = REBASE(0x37D9F34);
+        const uintptr_t Luau_Execute = REBASE(0x37D9F34);
         const uintptr_t LuaO_NilObject = REBASE(0x5730778);
         const uintptr_t LuaH_DummyNode = REBASE(0x572FE88);
     }
@@ -55,6 +53,7 @@ namespace Offsets
 	{
 		const uintptr_t Identity = 0x30;
 		const uintptr_t Capabilities = 0x50;
+        const uintptr_t ScriptContextToResume = 0x850;
 	}
 }
 
@@ -62,8 +61,8 @@ namespace Roblox
 {
     inline auto TaskDefer = (int(__fastcall*)(lua_State*))Offsets::TaskDefer;
     inline auto Print = (uintptr_t(__fastcall*)(int, const char*, ...))Offsets::Print;
-    inline auto LuaU_Execute = (void(__fastcall*)(lua_State*))Offsets::LuaU::LuaU_Execute;
-    inline auto LuaD_Throw = (void(__fastcall*)(lua_State*, int))Offsets::LuaU::LuaD_Throw;
+    inline auto Luau_Execute = (void(__fastcall*)(lua_State*))Offsets::Luau::Luau_Execute;
+    inline auto LuaD_Throw = (void(__fastcall*)(lua_State*, int))Offsets::Luau::LuaD_Throw;
     inline auto ScriptContextResume = (int(__fastcall*)(int64_t, DebuggerResult*, WeakThreadRef**, int32_t, bool, const char*))Offsets::ScriptContextResume;
 }
 
